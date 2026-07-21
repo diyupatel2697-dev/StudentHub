@@ -10,7 +10,7 @@ The purpose of this website is to provide students with one platform where they 
 
 ## Technology Used
 
-- HTML5
+- HTML
 
 ---
 
