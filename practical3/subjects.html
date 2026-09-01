@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Subjects</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <input type="checkbox" class="sidebar-toggle-checkbox" id="sidebar-toggle">
+        <aside class="sidebar">
+            <label for="sidebar-toggle" class="sidebar-toggle-label">☰</label>
+            <ul>
+                <li><a href="profile.html"><span></span> <span>Profile</span></a></li>
+                <li><a href="attendance.html"><span></span> <span>Attendance</span></a></li>
+                <li class="sidebar-active"><a href="subjects.html"><span></span> <span>Subjects</span></a></li>
+                <li><a href="assignments.html"><span></span> <span>Assignments</span></a></li>
+                <li><a href="study-material.html"><span></span> <span>Study Material</span></a></li>
+                <li><a href="results.html"><span></span> <span>Results</span></a></li>
+                <li><a href="timetable.html"><span></span> <span>Timetable</span></a></li>
+                <li><a href="notifications.html"><span></span> <span>Notifications</span></a></li>
+                <li><a href="logout.html"><span></span> <span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="text-green mb-1">My Subjects</h1>
+            
+            <div class="card">
+                <h3>Current Semester - Semester 5</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Credits</th>
+                            <th>Faculty</th>
+                            <th>Room</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS501</td>
+                            <td>Data Structures & Algorithms</td>
+                            <td>4</td>
+                            <td>Dr. Smith</td>
+                            <td>Room 101</td>
+                            <td style="color: green;">Active</td>
+                        </tr>
+                        <tr>
+                            <td>CS502</td>
+                            <td>Database Management Systems</td>
+                            <td>3</td>
+                            <td>Prof. Johnson</td>
+                            <td>Room 205</td>
+                            <td style="color: green;">Active</td>
+                        </tr>
+                        <tr>
+                            <td>CS503</td>
+                            <td>Computer Networks</td>
+                            <td>3</td>
+                            <td>Dr. Williams</td>
+                            <td>Lab 3</td>
+                            <td style="color: green;">Active</td>
+                        </tr>
+                        <tr>
+                            <td>CS504</td>
+                            <td>Operating Systems</td>
+                            <td>4</td>
+                            <td>Prof. Brown</td>
+                            <td>Room 102</td>
+                            <td style="color: green;">Active</td>
+                        </tr>
+                        <tr>
+                            <td>CS505</td>
+                            <td>Software Engineering</td>
+                            <td>3</td>
+                            <td>Dr. Davis</td>
+                            <td>Room 104</td>
+                            <td style="color: green;">Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="card">
+                    <h3>Data Structures & Algorithms</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">Code:</span> CS501
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Credits:</span> 4
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Faculty:</span> Dr. Smith
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Room:</span> Room 101
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Timings:</span> Mon, Wed, Fri (9:00-10:00 AM)
+                    </div>
+                    <button class="btn btn-primary mt-2">View Details</button>
+                </div>
+
+                <div class="card">
+                    <h3>Database Management Systems</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">Code:</span> CS502
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Credits:</span> 3
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Faculty:</span> Prof. Johnson
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Room:</span> Room 205
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Timings:</span> Mon, Tue, Thu (10:15-11:15 AM)
+                    </div>
+                    <button class="btn btn-primary mt-2">View Details</button>
+                </div>
+
+                <div class="card">
+                    <h3>Computer Networks</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">Code:</span> CS503
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Credits:</span> 3
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Faculty:</span> Dr. Williams
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Room:</span> Lab 3
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Timings:</span> Mon, Wed, Fri (11:30-12:30 PM)
+                    </div>
+                    <button class="btn btn-primary mt-2">View Details</button>
+                </div>
+
+                <div class="card">
+                    <h3>Operating Systems</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">Code:</span> CS504
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Credits:</span> 4
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Faculty:</span> Prof. Brown
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Room:</span> Room 102
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Timings:</span> Tue, Thu, Fri (2:00-3:00 PM)
+                    </div>
+                    <button class="btn btn-primary mt-2">View Details</button>
+                </div>
+
+                <div class="card">
+                    <h3>Software Engineering</h3>
+                    <div class="detail-item">
+                        <span class="detail-label">Code:</span> CS505
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Credits:</span> 3
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Faculty:</span> Dr. Davis
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Room:</span> Room 104
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Timings:</span> Tue, Thu (3:15-4:15 PM)
+                    </div>
+                    <button class="btn btn-primary mt-2">View Details</button>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <h3>Subject Summary</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">5</h4>
+                        <p>Total Subjects</p>
+                    </div>
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">17</h4>
+                        <p>Total Credits</p>
+                    </div>
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">5</h4>
+                        <p>Active Subjects</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

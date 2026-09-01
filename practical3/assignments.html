@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Assignments</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <input type="checkbox" class="sidebar-toggle-checkbox" id="sidebar-toggle">
+        <aside class="sidebar">
+            <label for="sidebar-toggle" class="sidebar-toggle-label">☰</label>
+            <ul>
+                <li><a href="profile.html"><span></span> <span>Profile</span></a></li>
+                <li><a href="attendance.html"><span></span> <span>Attendance</span></a></li>
+                <li><a href="subjects.html"><span></span> <span>Subjects</span></a></li>
+                <li class="sidebar-active"><a href="assignments.html"><span></span> <span>Assignments</span></a></li>
+                <li><a href="study-material.html"><span></span> <span>Study Material</span></a></li>
+                <li><a href="results.html"><span></span> <span>Results</span></a></li>
+                <li><a href="timetable.html"><span></span> <span>Timetable</span></a></li>
+                <li><a href="notifications.html"><span></span> <span>Notifications</span></a></li>
+                <li><a href="logout.html"><span></span> <span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="text-green mb-1">Assignments</h1>
+            
+            <div class="card">
+                <div class="form-group">
+                    <label for="subject-select">Select Subject:</label>
+                    <select id="subject-select">
+                        <option value="all">All Subjects</option>
+                        <option value="fcn">Fundamentals of Computer Networks</option>
+                        <option value="dsa">Data Structures & Algorithms</option>
+                        <option value="dbms">Database Management Systems</option>
+                        <option value="os">Operating Systems</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="assignment-section">
+                <h3>Do As Soon As Possible</h3>
+                <div class="assignment-card urgent">
+                    <h4>DSA Assignment 3 - Binary Trees</h4>
+                    <p><strong>Subject:</strong> Data Structures & Algorithms</p>
+                    <p><strong>Due Date:</strong> August 25, 2026</p>
+                    <p><strong>Description:</strong> Implement binary tree traversal algorithms</p>
+                    <button class="btn btn-primary">Submit Now</button>
+                </div>
+            </div>
+
+            <div class="assignment-section">
+                <h3>Pending</h3>
+                <div class="assignment-card pending">
+                    <h4>DBMS Project - ER Diagram Design</h4>
+                    <p><strong>Subject:</strong> Database Management Systems</p>
+                    <p><strong>Due Date:</strong> August 30, 2026</p>
+                    <p><strong>Description:</strong> Design ER diagram for library management system</p>
+                    <button class="btn btn-primary">View Details</button>
+                </div>
+                <div class="assignment-card pending">
+                    <h4>OS Assignment 2 - Process Scheduling</h4>
+                    <p><strong>Subject:</strong> Operating Systems</p>
+                    <p><strong>Due Date:</strong> September 5, 2026</p>
+                    <p><strong>Description:</strong> Implement CPU scheduling algorithms</p>
+                    <button class="btn btn-primary">View Details</button>
+                </div>
+            </div>
+
+            <div class="assignment-section">
+                <h3>Submitted</h3>
+                <div class="assignment-card submitted">
+                    <h4>FCN Assignment 1 - Network Topologies</h4>
+                    <p><strong>Subject:</strong> Fundamentals of Computer Networks</p>
+                    <p><strong>Submitted:</strong> August 15, 2026</p>
+                    <p><strong>Status:</strong> Under Review</p>
+                    <button class="btn btn-secondary">View Submission</button>
+                </div>
+                <div class="assignment-card submitted">
+                    <h4>DSA Assignment 2 - Sorting Algorithms</h4>
+                    <p><strong>Subject:</strong> Data Structures & Algorithms</p>
+                    <p><strong>Submitted:</strong> August 10, 2026</p>
+                    <p><strong>Status:</strong> Graded (A)</p>
+                    <button class="btn btn-secondary">View Submission</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

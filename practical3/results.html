@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Results</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <input type="checkbox" class="sidebar-toggle-checkbox" id="sidebar-toggle">
+        <aside class="sidebar">
+            <label for="sidebar-toggle" class="sidebar-toggle-label">☰</label>
+            <ul>
+                <li><a href="profile.html"><span></span> <span>Profile</span></a></li>
+                <li><a href="attendance.html"><span></span> <span>Attendance</span></a></li>
+                <li><a href="subjects.html"><span></span> <span>Subjects</span></a></li>
+                <li><a href="assignments.html"><span></span> <span>Assignments</span></a></li>
+                <li><a href="study-material.html"><span></span> <span>Study Material</span></a></li>
+                <li class="sidebar-active"><a href="results.html"><span></span> <span>Results</span></a></li>
+                <li><a href="timetable.html"><span></span> <span>Timetable</span></a></li>
+                <li><a href="notifications.html"><span></span> <span>Notifications</span></a></li>
+                <li><a href="logout.html"><span></span> <span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="text-green mb-1">Results</h1>
+            
+            <div class="result-card">
+                <h3>Internal Marks - Semester 5</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>CIE 1</th>
+                            <th>CIE 2</th>
+                            <th>CIE 3</th>
+                            <th>Assignment</th>
+                            <th>Total</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Structures</td>
+                            <td>18/20</td>
+                            <td>19/20</td>
+                            <td>17/20</td>
+                            <td>9/10</td>
+                            <td>63/70</td>
+                            <td><span class="grade grade-a">A</span></td>
+                        </tr>
+                        <tr>
+                            <td>Database Management</td>
+                            <td>16/20</td>
+                            <td>17/20</td>
+                            <td>18/20</td>
+                            <td>8/10</td>
+                            <td>59/70</td>
+                            <td><span class="grade grade-b">B+</span></td>
+                        </tr>
+                        <tr>
+                            <td>Computer Networks</td>
+                            <td>15/20</td>
+                            <td>16/20</td>
+                            <td>15/20</td>
+                            <td>7/10</td>
+                            <td>53/70</td>
+                            <td><span class="grade grade-b">B</span></td>
+                        </tr>
+                        <tr>
+                            <td>Operating Systems</td>
+                            <td>17/20</td>
+                            <td>18/20</td>
+                            <td>19/20</td>
+                            <td>9/10</td>
+                            <td>63/70</td>
+                            <td><span class="grade grade-a">A</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="result-card">
+                <h3>Semester Result - Semester 4</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Internal</th>
+                            <th>External</th>
+                            <th>Total</th>
+                            <th>Credits</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Programming in Java</td>
+                            <td>28/30</td>
+                            <td>65/70</td>
+                            <td>93/100</td>
+                            <td>4</td>
+                            <td><span class="grade grade-a">A</span></td>
+                        </tr>
+                        <tr>
+                            <td>Discrete Mathematics</td>
+                            <td>25/30</td>
+                            <td>58/70</td>
+                            <td>83/100</td>
+                            <td>3</td>
+                            <td><span class="grade grade-b">B+</span></td>
+                        </tr>
+                        <tr>
+                            <td>Digital Logic Design</td>
+                            <td>27/30</td>
+                            <td>62/70</td>
+                            <td>89/100</td>
+                            <td>3</td>
+                            <td><span class="grade grade-a">A</span></td>
+                        </tr>
+                        <tr>
+                            <td>Computer Organization</td>
+                            <td>26/30</td>
+                            <td>60/70</td>
+                            <td>86/100</td>
+                            <td>4</td>
+                            <td><span class="grade grade-b">B+</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="result-card">
+                <h3>CGPA Summary</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">3.75</h4>
+                        <p>Current CGPA</p>
+                    </div>
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">3.82</h4>
+                        <p>Semester 4 SGPA</p>
+                    </div>
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">120</h4>
+                        <p>Total Credits Earned</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

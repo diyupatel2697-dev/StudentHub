@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Study Material</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <input type="checkbox" class="sidebar-toggle-checkbox" id="sidebar-toggle">
+        <aside class="sidebar">
+            <label for="sidebar-toggle" class="sidebar-toggle-label">☰</label>
+            <ul>
+                <li><a href="profile.html"><span></span> <span>Profile</span></a></li>
+                <li><a href="attendance.html"><span></span> <span>Attendance</span></a></li>
+                <li><a href="subjects.html"><span></span> <span>Subjects</span></a></li>
+                <li><a href="assignments.html"><span></span> <span>Assignments</span></a></li>
+                <li class="sidebar-active"><a href="study-material.html"><span></span> <span>Study Material</span></a></li>
+                <li><a href="results.html"><span></span> <span>Results</span></a></li>
+                <li><a href="timetable.html"><span></span> <span>Timetable</span></a></li>
+                <li><a href="notifications.html"><span></span> <span>Notifications</span></a></li>
+                <li><a href="logout.html"><span></span> <span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="text-green mb-1">Study Material</h1>
+            
+            <div class="material-grid">
+                <div class="material-card">
+                    <div class="material-icon"></div>
+                    <h3>Notes</h3>
+                    <p>Class notes and lecture materials</p>
+                    <button class="btn btn-primary mt-2">Access Notes</button>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-icon"></div>
+                    <h3>PPTs</h3>
+                    <p>Presentation slides from lectures</p>
+                    <button class="btn btn-primary mt-2">View PPTs</button>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-icon"></div>
+                    <h3>Textbooks</h3>
+                    <p>Recommended textbooks and references</p>
+                    <button class="btn btn-primary mt-2">Browse Books</button>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-icon"></div>
+                    <h3>Previous Year Questions</h3>
+                    <p>Past exam papers for practice</p>
+                    <button class="btn btn-primary mt-2">Download PYQs</button>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <h3>Recent Materials</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Type</th>
+                            <th>Title</th>
+                            <th>Date Added</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Structures</td>
+                            <td>Notes</td>
+                            <td>Binary Trees - Chapter 5</td>
+                            <td>Aug 20, 2026</td>
+                            <td><button class="btn btn-secondary">Download</button></td>
+                        </tr>
+                        <tr>
+                            <td>Database Management</td>
+                            <td>PPT</td>
+                            <td>Normalization - Lecture 8</td>
+                            <td>Aug 18, 2026</td>
+                            <td><button class="btn btn-secondary">Download</button></td>
+                        </tr>
+                        <tr>
+                            <td>Computer Networks</td>
+                            <td>Notes</td>
+                            <td>OSI Model - Complete Guide</td>
+                            <td>Aug 15, 2026</td>
+                            <td><button class="btn btn-secondary">Download</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
