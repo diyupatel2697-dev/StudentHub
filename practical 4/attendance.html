@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Notification Banner -->
+    <div id="notification-banner" style="position: fixed; top: -100px; left: 0; right: 0; background-color: #2d5a27; color: white; padding: 15px; text-align: center; z-index: 9999; transition: top 0.5s;">
+        <span> Maintain 75% attendance to avoid debarment!</span>
+        <button id="banner-close" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; margin-left: 20px;">&times;</button>
+    </div>
+
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+        <div class="hamburger" id="hamburger" style="display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; padding: 5px;">
+            <span style="width: 25px; height: 3px; background-color: #2d5a27; border-radius: 3px;"></span>
+            <span style="width: 25px; height: 3px; background-color: #2d5a27; border-radius: 3px;"></span>
+            <span style="width: 25px; height: 3px; background-color: #2d5a27; border-radius: 3px;"></span>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" style="background: none; border: 2px solid #2d5a27; color: #2d5a27; padding: 8px 12px; border-radius: 20px; cursor: pointer; font-size: 1.2rem; margin-left: 20px;">🌙</button>
+    </header>
+
+    <div class="dashboard-container">
+        <input type="checkbox" class="sidebar-toggle-checkbox" id="sidebar-toggle">
+        <aside class="sidebar">
+            <label for="sidebar-toggle" class="sidebar-toggle-label">☰</label>
+            <ul>
+                <li><a href="profile.html"><span></span> <span>Profile</span></a></li>
+                <li class="sidebar-active"><a href="attendance.html"><span></span> <span>Attendance</span></a></li>
+                <li><a href="subjects.html"><span></span> <span>Subjects</span></a></li>
+                <li><a href="assignments.html"><span></span> <span>Assignments</span></a></li>
+                <li><a href="study-material.html"><span></span> <span>Study Material</span></a></li>
+                <li><a href="results.html"><span></span> <span>Results</span></a></li>
+                <li><a href="timetable.html"><span></span> <span>Timetable</span></a></li>
+                <li><a href="notifications.html"><span></span> <span>Notifications</span></a></li>
+                <li><a href="logout.html"><span></span> <span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="text-green mb-1">Attendance Record</h1>
+            
+            <div class="card">
+                <h3>Overall Attendance</h3>
+                <div class="chart-container">
+                    <div class="css-pie-chart">
+                        <div class="pie-chart-inner">
+                            <span class="pie-percentage">87%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <h2 class="text-green">87%</h2>
+                    <p>Total Attendance</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Subject-wise Attendance</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Total Classes</th>
+                            <th>Attended</th>
+                            <th>Percentage</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Structures & Algorithms</td>
+                            <td>45</td>
+                            <td>42</td>
+                            <td>93%</td>
+                            <td class="status-good">Good</td>
+                        </tr>
+                        <tr>
+                            <td>Database Management</td>
+                            <td>40</td>
+                            <td>35</td>
+                            <td>87%</td>
+                            <td class="status-good">Good</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Networks</td>
+                            <td>38</td>
+                            <td>30</td>
+                            <td>79%</td>
+                            <td class="status-average">Average</td>
+                        </tr>
+                        <tr>
+                            <td>Operating Systems</td>
+                            <td>42</td>
+                            <td>38</td>
+                            <td>90%</td>
+                            <td class="status-good">Good</td>
+                        </tr>
+                        <tr>
+                            <td>Software Engineering</td>
+                            <td>35</td>
+                            <td>28</td>
+                            <td>80%</td>
+                            <td class="status-average">Average</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Attendance Summary</h3>
+                <div class="grid-200">
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">200</h4>
+                        <p>Total Classes</p>
+                    </div>
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">173</h4>
+                        <p>Classes Attended</p>
+                    </div>
+                    <div class="detail-item text-center">
+                        <h4 class="text-green">27</h4>
+                        <p>Classes Missed</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
