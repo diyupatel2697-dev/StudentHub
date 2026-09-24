@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Notification Banner -->
+    <div id="notification-banner" style="position: fixed; top: -100px; left: 0; right: 0; background-color: #2d5a27; color: white; padding: 15px; text-align: center; z-index: 9999; transition: top 0.5s;">
+        <span> Please login to access your dashboard.</span>
+        <button id="banner-close" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; margin-left: 20px;">&times;</button>
+    </div>
+
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+        <div class="hamburger" id="hamburger" style="display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; padding: 5px;">
+            <span style="width: 25px; height: 3px; background-color: #2d5a27; border-radius: 3px;"></span>
+            <span style="width: 25px; height: 3px; background-color: #2d5a27; border-radius: 3px;"></span>
+            <span style="width: 25px; height: 3px; background-color: #2d5a27; border-radius: 3px;"></span>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" style="background: none; border: 2px solid #2d5a27; color: #2d5a27; padding: 8px 12px; border-radius: 20px; cursor: pointer; font-size: 1.2rem; margin-left: 20px;">🌙</button>
+    </header>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Student Login</h2>
+            <form action="dashboard.html">
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
