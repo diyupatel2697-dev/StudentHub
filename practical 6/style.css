@@ -1,0 +1,1156 @@
+/* Student Hub - Green Theme CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #2d5a27;
+    --dark-green: #1e3d1a;
+    --medium-green: #4a7c44;
+    --light-green: #8fb88a;
+    --soft-green: #e8f5e9;
+    --hover-green: #3d6b37;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f5f5f5;
+    --border-color: #ddd;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --primary-green: #4a7c44;
+    --dark-green: #8fb88a;
+    --medium-green: #6b9e65;
+    --light-green: #3d6b37;
+    --soft-green: #1e3d1a;
+    --hover-green: #5a8c54;
+    --text-dark: #e0e0e0;
+    --text-light: #f5f5f5;
+    --bg-light: #1a1a1a;
+    --border-color: #444;
+}
+
+body.dark-mode .card,
+body.dark-mode .login-box,
+body.dark-mode .assignment-card,
+body.dark-mode .material-card,
+body.dark-mode .result-card,
+body.dark-mode .notification-item {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode table th {
+    background-color: #4a7c44;
+}
+
+body.dark-mode table tr:nth-child(even) {
+    background-color: #3d3d3d;
+}
+
+body.dark-mode .faq-answer {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .pie-chart-inner {
+    background-color: #2d2d2d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header / Navigation Bar */
+header {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-green);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--dark-green);
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: var(--hover-green);
+    color: var(--text-light);
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Login Page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, var(--soft-green) 0%, var(--light-green) 100%);
+}
+
+.login-box {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+a.btn {
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-green);
+}
+
+.btn-secondary {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+}
+
+.btn-secondary:hover {
+    background-color: var(--medium-green);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Dashboard */
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
+
+/* CSS-only sidebar toggle using checkbox hack */
+.sidebar-toggle-checkbox {
+    display: none;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 1rem 0;
+    transition: width 0.3s;
+    overflow-y: auto;
+}
+
+.sidebar-toggle-label {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+
+.sidebar-toggle-checkbox:checked ~ .sidebar {
+    width: 60px;
+}
+
+.sidebar-toggle-checkbox:checked ~ .sidebar li span:last-child {
+    display: none;
+}
+
+.sidebar-toggle-checkbox:checked ~ .sidebar li {
+    justify-content: center;
+    padding: 0.75rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sidebar li:hover {
+    background-color: var(--hover-green);
+}
+
+.sidebar li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.sidebar li.sidebar-active {
+    background-color: var(--hover-green);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    overflow-y: auto;
+}
+
+/* Cards and Sections */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--light-green);
+    padding-bottom: 0.5rem;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--soft-green);
+}
+
+table tr:hover {
+    background-color: var(--light-green);
+}
+
+/* Profile Page */
+.profile-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    background-color: var(--light-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    border: 4px solid var(--primary-green);
+}
+
+.profile-details h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background-color: var(--soft-green);
+    border-radius: 4px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+/* Assignments Page */
+.assignment-section {
+    margin-bottom: 2rem;
+}
+
+.assignment-section h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    background-color: var(--soft-green);
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+.assignment-card {
+    background-color: white;
+    border-left: 4px solid var(--primary-green);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.assignment-card.pending {
+    border-left-color: #ff9800;
+}
+
+.assignment-card.submitted {
+    border-left-color: var(--primary-green);
+}
+
+.assignment-card.urgent {
+    border-left-color: #f44336;
+}
+
+/* Attendance Page */
+.chart-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+/* CSS-only Pie Chart */
+.css-pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--primary-green) 0deg 313deg,
+        var(--soft-green) 313deg 360deg
+    );
+    margin: 0 auto;
+    position: relative;
+}
+
+.pie-chart-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-percentage {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* FAQs - CSS-only using details/summary */
+.faq-item {
+    margin-bottom: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.faq-item summary {
+    padding: 1rem;
+    background-color: var(--primary-green);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::before {
+    content: '▶ ';
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.faq-item[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.faq-answer {
+    padding: 1rem;
+    background-color: white;
+}
+
+/* Study Material */
+.material-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.material-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+}
+
+.material-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Results */
+.result-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.grade {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.grade-a { background-color: #4caf50; color: white; }
+.grade-b { background-color: #8bc34a; color: white; }
+.grade-c { background-color: #ff9800; color: white; }
+.grade-d { background-color: #f44336; color: white; }
+
+/* Notifications */
+.notification-item {
+    background-color: white;
+    border-left: 4px solid var(--primary-green);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notification-item.urgent {
+    border-left-color: #f44336;
+}
+
+.notification-date {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Logout */
+.logout-message {
+    text-align: center;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.logout-message h2 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .profile-container {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo {
+        margin: 0 auto 1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-green { color: var(--primary-green); }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+
+/* Sidebar Active State */
+.sidebar-active {
+    background-color: var(--hover-green);
+}
+
+/* Table Status Colors */
+.status-good { color: green; }
+.status-average { color: orange; }
+.status-bad { color: red; }
+
+/* Grid Layouts */
+.grid-300 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-200 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Placeholder Box */
+.placeholder-box {
+    background-color: #f5f5f5;
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.placeholder-box-sm {
+    background-color: #f5f5f5;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+/* ==================== Theme Switcher ==================== */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-green);
+}
+
+/* ==================== Hamburger Menu ==================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    nav ul {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-green);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s;
+        padding: 2rem 0;
+        gap: 0;
+    }
+    
+    nav ul.active {
+        left: 0;
+    }
+    
+    nav ul li {
+        margin: 1rem 0;
+    }
+}
+
+/* ==================== Notification Banner ==================== */
+.notification-banner {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2000;
+    max-width: 400px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification-banner.info {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.notification-banner.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.notification-banner.warning {
+    background-color: #ff9800;
+    color: white;
+}
+
+.notification-banner.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.notification-banner.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* ==================== Modal Popup ==================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+body.dark-mode .modal-content {
+    background-color: #2d2d2d;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    color: var(--primary-green);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: 0;
+}
+
+.modal-body {
+    color: var(--text-dark);
+}
+
+.modal-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ==================== Image/Content Slider ==================== */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.slider-nav:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+    background-color: white;
+}
+
+/* ==================== Enhanced FAQ Animations ==================== */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+
+/* ==================== Registration Page ==================== */
+
+#registrationForm {
+    max-width: 650px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+body > h2 {
+    text-align: center;
+    color: var(--primary-green);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#registrationForm > div {
+    margin-bottom: 1.2rem;
+}
+
+#registrationForm label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="email"],
+#registrationForm input[type="tel"],
+#registrationForm input[type="password"],
+#registrationForm select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#registrationForm input:focus,
+#registrationForm select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 5px rgba(45, 90, 39, 0.25);
+}
+
+/* Gender Radio Buttons */
+#registrationForm input[type="radio"] {
+    margin-right: 0.3rem;
+    margin-left: 0.8rem;
+    accent-color: var(--primary-green);
+}
+
+#registrationForm input[type="radio"]:first-of-type {
+    margin-left: 0;
+}
+
+/* Terms Checkbox */
+#registrationForm input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--primary-green);
+}
+
+/* Error Messages */
+.error {
+    display: block;
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    min-height: 18px;
+}
+
+/* Register Button */
+#registrationForm button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#registrationForm button[type="submit"]:hover {
+    background-color: var(--hover-green);
+}
+
+#registrationForm button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Registration Page Background */
+body:has(#registrationForm) {
+    background: linear-gradient(
+        135deg,
+        var(--soft-green) 0%,
+        var(--light-green) 100%
+    );
+    min-height: 100vh;
+}
+
+/* Dark Mode */
+body.dark-mode #registrationForm {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode #registrationForm input[type="text"],
+body.dark-mode #registrationForm input[type="email"],
+body.dark-mode #registrationForm input[type="tel"],
+body.dark-mode #registrationForm input[type="password"],
+body.dark-mode #registrationForm select {
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+/* Responsive Registration Form */
+@media (max-width: 768px) {
+    #registrationForm {
+        width: 90%;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+
+    body > h2 {
+        font-size: 1.5rem;
+    }
+
+    #registrationForm input[type="radio"] {
+        margin-left: 0.4rem;
+    }
+
+}

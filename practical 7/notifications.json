@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Web Development Assignment",
+        "category": "Assignment",
+        "date": "2026-10-08",
+        "priority": "Important"
+    },
+    {
+        "id": 2,
+        "title": "Mid Semester Examination",
+        "category": "Exam",
+        "date": "2026-10-15",
+        "priority": "Important"
+    },
+    {
+        "id": 3,
+        "title": "SIH Team Meeting",
+        "category": "Event",
+        "date": "2026-10-10",
+        "priority": "Normal"
+    }
+]

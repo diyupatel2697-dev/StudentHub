@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Notifications</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="notification-banner">
+        <span>Check your notifications regularly for updates!</span>
+        <button class="notification-close"></button>
+    </div>
+
+    <header>
+        <div class="header-left">
+            <div class="logo-icon"></div>
+            <div class="site-title">STUDENT HUB</div>
+        </div>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle">🌙</button>
+    </header>
+
+    <div class="dashboard-container">
+
+        <input type="checkbox" class="sidebar-toggle-checkbox" id="sidebar-toggle">
+
+        <aside class="sidebar">
+
+            <label for="sidebar-toggle" class="sidebar-toggle-label">☰</label>
+
+            <ul>
+                <li>
+                    <a href="profile.html">
+                        <span></span>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <span></span>
+                        <span>Attendance</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="subjects.html">
+                        <span></span>
+                        <span>Subjects</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assignments.html">
+                        <span></span>
+                        <span>Assignments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="study-material.html">
+                        <span></span>
+                        <span>Study Material</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="results.html">
+                        <span></span>
+                        <span>Results</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="timetable.html">
+                        <span></span>
+                        <span>Timetable</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-active">
+                    <a href="notifications.html">
+                        <span></span>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="logout.html">
+                        <span></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <main class="main-content">
+
+            <section class="notification-section">
+
+                <h1 class="text-green mb-1">Notifications</h1>
+
+                <div class="notification-controls">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search notifications..."
+                    >
+
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="Exam">Exam</option>
+                        <option value="Assignment">Assignment</option>
+                        <option value="Event">Event</option>
+                    </select>
+
+                    <select id="sortSelect">
+                        <option value="">Sort By</option>
+                        <option value="dateNewest">Newest First</option>
+                        <option value="dateOldest">Oldest First</option>
+                        <option value="titleAsc">Title A-Z</option>
+                        <option value="titleDesc">Title Z-A</option>
+                    </select>
+
+                </div>
+
+                <div id="notificationList"></div>
+
+                <div id="pagination"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="notification-data.js"></script>
+
+</body>
+</html>
