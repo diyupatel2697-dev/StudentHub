@@ -1,77 +1,105 @@
-document.getElementById("registrationForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // prevent form submission
-  let valid = true;
+document.getElementById("registrationForm").addEventListener("submit", function(event)
+{
+    let valid = true;
 
-  // Regex patterns
-  const namePattern = /^[A-Za-z\s]{3,}$/;
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-  const mobilePattern = /^[6-9]\d{9}$/;
-  const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const course = document.getElementById("course").value;
+    const year = document.getElementById("year").value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const terms = document.getElementById("terms").checked;
 
-  // Name validation
-  const name = document.getElementById("name").value;
-  if (!namePattern.test(name)) {
-    document.getElementById("nameError").textContent = "Enter a valid name (min 3 letters).";
-    valid = false;
-  } else document.getElementById("nameError").textContent = "";
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("mobileError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("confirmPasswordError").textContent = "";
+    document.getElementById("courseError").textContent = "";
+    document.getElementById("yearError").textContent = "";
+    document.getElementById("genderError").textContent = "";
+    document.getElementById("termsError").textContent = "";
 
-  // Email validation
-  const email = document.getElementById("email").value;
-  if (!emailPattern.test(email)) {
-    document.getElementById("emailError").textContent = "Enter a valid email.";
-    valid = false;
-  } else document.getElementById("emailError").textContent = "";
+    const namePattern = /^[A-Za-z ]{2,50}$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobilePattern = /^[0-9]{10}$/;
 
-  // Mobile validation
-  const mobile = document.getElementById("mobile").value;
-  if (!mobilePattern.test(mobile)) {
-    document.getElementById("mobileError").textContent = "Enter a valid 10-digit mobile number.";
-    valid = false;
-  } else document.getElementById("mobileError").textContent = "";
+    if (!namePattern.test(name))
+    {
+        document.getElementById("nameError").textContent =
+            "Enter a valid name.";
 
-  // Password validation
-  const password = document.getElementById("password").value;
-  if (!passwordPattern.test(password)) {
-    document.getElementById("passwordError").textContent = "Password must be 6+ chars, include uppercase, number & special char.";
-    valid = false;
-  } else document.getElementById("passwordError").textContent = "";
+        valid = false;
+    }
 
-  // Confirm password
-  const confirmPassword = document.getElementById("confirmPassword").value;
-  if (password !== confirmPassword) {
-    document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
-    valid = false;
-  } else document.getElementById("confirmPasswordError").textContent = "";
+    if (!emailPattern.test(email))
+    {
+        document.getElementById("emailError").textContent =
+            "Enter a valid email.";
 
-  // Course validation
-  const course = document.getElementById("course").value;
-  if (course === "") {
-    document.getElementById("courseError").textContent = "Please select a course.";
-    valid = false;
-  } else document.getElementById("courseError").textContent = "";
+        valid = false;
+    }
 
-  const year = document.getElementById("year").value;
-  if (year === "") {
-    document.getElementById("yearError").textContent = "Please select a year.";
-    valid = false;
-  } else document.getElementById("yearError").textContent = "";
+    if (!mobilePattern.test(mobile))
+    {
+        document.getElementById("mobileError").textContent =
+            "Mobile number must contain 10 digits.";
 
-  const gender = document.querySelector('input[name="gender"]:checked');
-  if (!gender) {
-    document.getElementById("genderError").textContent = "Please select gender.";
-    valid = false;
-  } else document.getElementById("genderError").textContent = "";
+        valid = false;
+    }
 
-  // Terms validation
-  const terms = document.getElementById("terms").checked;
-  if (!terms) {
-    document.getElementById("termsError").textContent = "You must accept terms.";
-    valid = false;
-  } else document.getElementById("termsError").textContent = "";
+    if (password.length < 6)
+    {
+        document.getElementById("passwordError").textContent =
+            "Password must contain at least 6 characters.";
 
-  // Final check
-  if (valid) {
-    alert("Registration Successful!");
-    this.reset();
-  }
+        valid = false;
+    }
+
+    if (password !== confirmPassword)
+    {
+        document.getElementById("confirmPasswordError").textContent =
+            "Passwords do not match.";
+
+        valid = false;
+    }
+
+    if (course === "")
+    {
+        document.getElementById("courseError").textContent =
+            "Please select a course.";
+
+        valid = false;
+    }
+
+    if (year === "")
+    {
+        document.getElementById("yearError").textContent =
+            "Please select a year.";
+
+        valid = false;
+    }
+
+    if (!gender)
+    {
+        document.getElementById("genderError").textContent =
+            "Please select your gender.";
+
+        valid = false;
+    }
+
+    if (!terms)
+    {
+        document.getElementById("termsError").textContent =
+            "Please accept the terms and conditions.";
+
+        valid = false;
+    }
+
+    if (!valid)
+    {
+        event.preventDefault();
+    }
 });
