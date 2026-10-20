@@ -1,0 +1,170 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .student-data-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+        }
+
+        .student-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .student-controls input,
+        .student-controls select {
+            padding: 0.7rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            min-width: 200px;
+        }
+
+        .student-controls input:focus,
+        .student-controls select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .student-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-green);
+        }
+
+        .student-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .student-card p {
+            margin: 0.5rem 0;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .pagination button {
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background: var(--primary-green);
+            color: white;
+            cursor: pointer;
+        }
+
+        .pagination button.active {
+            background: var(--dark-green);
+        }
+
+        .pagination button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #d32f2f;
+        }
+
+        @media (max-width: 768px) {
+            .student-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .student-controls {
+                flex-direction: column;
+            }
+
+            .student-controls input,
+            .student-controls select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>Student Hub</h2>
+            </div>
+
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="student-data.html">Students</a></li>
+            </ul>
+
+            <button id="theme-toggle">🌙</button>
+            <button id="hamburger">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="student-data-container">
+
+            <h1>Student Profiles</h1>
+
+            <div class="student-controls">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search student name..."
+                >
+
+                <select id="courseFilter">
+                    <option value="">All Courses</option>
+                    <option value="Computer Engineering">Computer Engineering</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                </select>
+
+                <select id="sortSelect">
+                    <option value="default">Sort By</option>
+                    <option value="nameAsc">Name A-Z</option>
+                    <option value="nameDesc">Name Z-A</option>
+                    <option value="yearAsc">Year Low-High</option>
+                    <option value="yearDesc">Year High-Low</option>
+                </select>
+
+            </div>
+
+            <div id="studentList" class="student-grid"></div>
+
+            <div id="pagination" class="pagination"></div>
+
+        </div>
+    </main>
+
+    <script src="student-data.js"></script>
+
+</body>
+</html>
+```
