@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles - Practical 6</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f3;
+            color: #263326;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #2d5a27;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .controls input,
+        .controls select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5c8;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .controls input:focus,
+        .controls select:focus {
+            border-color: #2d5a27;
+        }
+
+        #studentList {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .student-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .student-card h3 {
+            color: #2d5a27;
+            margin-bottom: 12px;
+        }
+
+        .student-card p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        .no-results {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            color: #777;
+        }
+
+        #pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        #pagination button {
+            padding: 9px 14px;
+            border: 1px solid #2d5a27;
+            background: white;
+            color: #2d5a27;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #pagination button:hover {
+            background: #2d5a27;
+            color: white;
+        }
+
+        #pagination button.active {
+            background: #2d5a27;
+            color: white;
+        }
+
+        #pagination button:disabled {
+            background: #ddd;
+            color: #888;
+            border-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: 1fr;
+            }
+
+            #studentList {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Profiles</h1>
+        <p>Practical 6 - Fetch API, Search, Filter, Sorting and Pagination</p>
+    </header>
+
+    <main class="container">
+
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search student by name..."
+            >
+
+            <select id="courseFilter">
+                <option value="">All Courses</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Computer Science">Computer Science</option>
+            </select>
+
+            <select id="sortSelect">
+                <option value="">Sort By</option>
+                <option value="nameAsc">Name A-Z</option>
+                <option value="nameDesc">Name Z-A</option>
+                <option value="yearAsc">Year Low to High</option>
+                <option value="yearDesc">Year High to Low</option>
+            </select>
+
+        </section>
+
+        <section id="studentList"></section>
+
+        <div id="pagination"></div>
+
+    </main>
+
+    <script src="student-data.js"></script>
+
+</body>
+</html>

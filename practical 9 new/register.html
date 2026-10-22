@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Secure Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="logo-icon"></div>
+        <div class="site-title">STUDENT HUB</div>
+    </div>
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="registration-container">
+    <div class="registration-box">
+        <h2>Student Registration</h2>
+        <p class="subtitle">Create your account to get started</p>
+        
+        <div id="statusAlert" style="display:none;"></div>
+        
+        <form id="registrationForm" action="register.php" method="POST" novalidate>
+            <div class="form-group">
+                <label for="student_number">Student Number *</label>
+                <input type="text" id="student_number" name="student_number" 
+                       placeholder="e.g., STU001" required>
+                <span class="error-message" id="student_number_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name" 
+                       placeholder="Enter your first name" required>
+                <span class="error-message" id="first_name_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" 
+                       placeholder="Enter your last name" required>
+                <span class="error-message" id="last_name_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="e.g., student@example.com" required>
+                <span class="error-message" id="email_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" 
+                       placeholder="e.g., 9876543210">
+                <span class="error-message" id="phone_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth *</label>
+                <input type="date" id="date_of_birth" name="date_of_birth" required>
+                <span class="error-message" id="date_of_birth_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span class="error-message" id="gender_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" 
+                       placeholder="Create a strong password" required>
+                <span class="error-message" id="password_error"></span>
+                <div class="password-strength">
+                    <div class="strength-meter">
+                        <div class="strength-bar" id="strength_bar"></div>
+                    </div>
+                    <span id="strength_text">Password Strength</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password *</label>
+                <input type="password" id="confirm_password" name="confirm_password" 
+                       placeholder="Confirm your password" required>
+                <span class="error-message" id="confirm_password_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the <a href="#" style="color: var(--primary-green);">Terms and Conditions</a>
+                </label>
+                <span class="error-message" id="terms_error"></span>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" id="submitBtn">Register</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+        </form>
+        
+        <p class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+        </p>
+    </div>
+</div>
+
+<script src="register_validation.js"></script>
+</body>
+</html>
