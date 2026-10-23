@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Secure Login (Practical 10)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registration.css">
+    <style>
+        .demo-credentials-card {
+            margin-top: 1.8rem;
+            padding: 14px 16px;
+            background: var(--soft-green);
+            border-radius: 8px;
+            border: 1px solid var(--light-green);
+            font-size: 0.85rem;
+            text-align: left;
+        }
+        .demo-credentials-card h4 {
+            color: var(--primary-green);
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cred-item {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .cred-tag {
+            display: inline-block;
+            font-weight: bold;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+        }
+        .cred-admin { background: #ffebee; color: #c62828; }
+        .cred-student { background: #e8f5e9; color: var(--primary-green); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="logo-icon"></div>
+        <div class="site-title">STUDENT HUB</div>
+    </div>
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="test_practical10.php">Test Suite</a></li>
+            <li><a href="login.html" style="color: var(--primary-green); font-weight: bold;">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>StudentHub Login</h2>
+        <p class="subtitle">Practical 10: Secure Sessions, RBAC &amp; Remember-Me</p>
+        
+        <div id="loginAlert" style="display:none;"></div>
+        
+        <form id="loginForm" action="login.php" method="POST" novalidate>
+            <div class="form-group">
+                <label for="email">Email Address or Student Number *</label>
+                <input type="text" id="email" name="email" 
+                       placeholder="e.g., student@example.com or STU001" required>
+                <span class="error-message" id="email_error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" 
+                       placeholder="Enter your password" required>
+                <span class="error-message" id="password_error"></span>
+            </div>
+            
+            <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                <label style="font-weight: normal; margin-bottom: 0; cursor: pointer; display: flex; align-items: center;">
+                    <input type="checkbox" id="remember" name="remember" value="1">
+                    Remember me (30 days token)
+                </label>
+                <a href="#" class="forgot-password" style="margin-bottom: 0;">Forgot?</a>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" id="submitBtn">Login</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+        </form>
+        
+        <p class="register-link">
+            Don't have an account? <a href="register.html">Register here</a>
+        </p>
+
+        <!-- Post-Lab & Viva Demo Credentials Guide -->
+        <div class="demo-credentials-card">
+            <h4><span>??</span> Demo Seed Accounts (for RBAC Testing):</h4>
+            <div class="cred-item">
+                <span class="cred-tag cred-admin">ADMIN</span> <strong>admin@studenthub.edu</strong> / <code>AdminPass123@</code><br>
+                <small style="color:#555;">&rarr; Tests Role-Based Redirection to <strong>Admin Dashboard</strong></small>
+            </div>
+            <div class="cred-item" style="margin-bottom: 0;">
+                <span class="cred-tag cred-student">STUDENT</span> <strong>john.doe@studenthub.edu</strong> / <code>StudentPass123@</code><br>
+                <small style="color:#555;">&rarr; Tests Role-Based Redirection to <strong>Student Dashboard</strong></small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    const status = urlParams.get('status');
+    const message = urlParams.get('message');
+    const alertBox = document.getElementById('loginAlert');
+    
+    if (alertBox) {
+        if (status === 'logout') {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-success';
+            alertBox.innerHTML = '<strong>Logged Out:</strong> ' + (message ? decodeURIComponent(message) : 'You have been securely logged out.');
+        } else if (error === 'timeout') {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-error';
+            alertBox.style.borderLeftColor = '#f57c00';
+            alertBox.style.backgroundColor = '#fff8e1';
+            alertBox.style.color = '#e65100';
+            alertBox.innerHTML = '<strong>Session Expired:</strong> ' + (message ? decodeURIComponent(message) : 'Your session timed out due to inactivity.');
+        } else if (error === 'unauthorized') {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-error';
+            alertBox.innerHTML = '<strong>Access Blocked:</strong> ' + (message ? decodeURIComponent(message) : 'Please login to access protected pages.');
+        } else if (error) {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-error';
+            alertBox.innerHTML = '<strong>Login Error:</strong> ' + (message ? decodeURIComponent(message) : 'Invalid credentials. Please try again.');
+        }
+    }
+});
+</script>
+</body>
+</html>
